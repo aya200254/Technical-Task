@@ -13,8 +13,8 @@ Route::get('/', function () {
 
 // Authenticated routes
 Route::middleware(['auth', 'verified'])->group(function () {
-    Route::get('/welcome', function () {
-        $products = Product::all(); 
+    Route::get('/', function () {
+        $products = Product::all();
         return view('welcome', compact('products'));
     })->name('welcome');
 
